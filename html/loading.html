@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 实现立方体</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <style>
+        @keyframes action {
+            50% {
+                transform: translateZ(20px);
+            }
+        }
+        .wrap{
+            width: 5rem;
+            height: 5rem;
+            transform-style: preserve-3d;
+            transform: rotateX(45deg) rotateZ(45deg);
+        }
+        .block, .block::before, .block::after{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            background-color: #7E3D76;
+        }
+        .block::before{
+            transform-origin: 100% 0;
+            transform: rotateY(270deg);
+        }
+        .block::after{
+            transform-origin: 0 100%;
+            transform: rotateX(90deg);
+        }
+        .block{
+            position: relative;
+            /* margin-left: 3px; */
+            box-shadow: 150px 150px 12px rgba(0, 0, 0, .2);
+            transform-style: preserve-3d;
+            transform: translateZ(80px);
+            transition: .25s;
+            animation: action 1s linear infinite;
+        }
+        .block:nth-child(1){
+            animation-delay: .15s;
+        }
+        .block:nth-child(2){
+            animation-delay: .2s;
+        }
+        .block:nth-child(3){
+            animation-delay: .35s;
+        }
+        .block:nth-child(4){
+            animation-delay: .5s;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="page-header" style="padding: 1rem">
+        <h2>基于css实现的3d加载动效</h2>
+    </header>
+    <section class="main-content" style="margin-top: 100px;">
+        <div class="wrap" style="margin: auto;">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        
+        <pre style="margin-top: 200px;">
+            代码见源文件
+        </pre>
+    </section>
+</body>
+</html>
