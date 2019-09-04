@@ -1,7 +1,7 @@
 # zyt-cloud.github.io
 default site
 # 前端异常监控
- 1，window.onerror不能捕获网络异常的错误 如图片404
+ 1，window.onerror不能捕获网络异常的错误 如图片404（try catch 不能捕获异步错误）
  网络请求异常不会事件冒泡，因此必须在捕获阶段(addEventListener第三个参数设为true)将其捕捉到才行（不能取得哪种状态码）
  ```
  <script>
@@ -32,4 +32,11 @@ new Promise((resolve) => {
 }).then(() => {
   throw 'promise error'
 });
+```
+### 异常上报方式
+1，动态创建img标签
+```
+function report(error) {
+  new Image().src = 'http://xxxx/report?error=' + error;
+}
 ```
