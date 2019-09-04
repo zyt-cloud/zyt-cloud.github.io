@@ -40,3 +40,4 @@ function report(error) {
   new Image().src = 'http://xxxx/report?error=' + error;
 }
 ```
+2，通过 Ajax 发送数据
