@@ -1,5 +1,6 @@
 # <a href="//zyt-cloud.github.io" target="_blank">zyt-cloud.github.io</a>
 default site zyt-cloud.github.io
+<a href="https://zyt-cloud.github.io" target="_blank">zyt-cloud.github.io</a>
 # 前端异常监控
  1，window.onerror不能捕获网络异常的错误 如图片404（try catch 不能捕获异步错误）
  网络请求异常不会事件冒泡，因此必须在捕获阶段(addEventListener第三个参数设为true)将其捕捉到才行（不能取得哪种状态码）
