@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>css 实现立方体</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen" />
+    <style>
+      @keyframes action {
+        0% {
+          transform: rotate3d(0);
+        }
+
+        100% {
+          transform: rotate3d(0.9, 0.6, 0.2, 360deg);
+        }
+      }
+      .wrap {
+        display: inline-block;
+        width: 10rem;
+        height: 10rem;
+        transform-style: preserve-3d;
+        animation: action 5s linear infinite;
+      }
+      .cube {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 100px;
+        transform-style: preserve-3d;
+        transform: rotateX(45deg) rotateZ(45deg);
+      }
+      .cube,
+      .cube > span {
+        width: 10rem;
+        height: 10rem;
+        background-color: #ff2d2d;
+      }
+      .cube > span {
+        position: absolute;
+      }
+      .cube > span:nth-child(1) {
+        background-color: #6a6aff;
+        transform-origin: 100% 0;
+        transform:/*  translateZ(-2rem) */ rotateY(-90deg);
+      }
+      .cube > span:nth-child(2) {
+        background-color: #ff359a;
+        transform-origin: 0 100%;
+        transform:/*  translateZ(-2rem) */ rotateX(90deg);
+      }
+      .cube > span:nth-child(3) {
+        background-color: #6a6aff;
+        transform-origin: 0 0;
+        transform:/*  translateZ(-2rem) */ rotateY(90deg);
+      }
+      .cube > span:nth-child(4) {
+        background-color: #5b5b5b;
+        transform-origin: 0 0;
+        transform: rotateX(-90deg);
+      }
+      .cube > span:nth-child(5) {
+        background-color: #00a600;
+        transform: translateZ(-10rem);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header" style="padding: 1rem">
+      <h2>基于css实现的立方体</h2>
+    </header>
+    <section class="main-content">
+      <div class="wrap">
+        <div class="cube">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <pre>
+            代码见源文件
+      </pre>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>css 实现立方体</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen" />
+    <style>
+      .cube {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 100px;
+        transform-style: preserve-3d;
+        transform: rotateX(45deg) rotateZ(45deg);
+      }
+      .cube,
+      .cube::before,
+      .cube::after {
+        width: 10rem;
+        height: 10rem;
+        background-color: #abcdef;
+      }
+      .cube::before {
+        content: '';
+        position: absolute;
+        transform-origin: 0 100%;
+        transform: rotateX(90deg);
+        background-color: grey;
+      }
+      .cube::after {
+        content: '';
+        position: absolute;
+        transform-origin: 100% 0;
+        transform: rotateY(270deg);
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header" style="padding: 1rem">
+      <h2>基于css实现的立方体</h2>
+    </header>
+    <section class="main-content">
+      <div class="cube"></div>
+      <pre>
+        .cube {
+          display: inline-block;
+          position: relative;
+          margin-bottom: 100px;
+          transform-style: preserve-3d;
+          transform: rotateX(45deg) rotateZ(45deg);
+        }
+        .cube,
+        .cube::before,
+        .cube::after {
+          width: 10rem;
+          height: 10rem;
+          background-color: #abcdef;
+        }
+        .cube::before {
+          content: '';
+          position: absolute;
+          transform-origin: 0 100%;
+          transform: rotateX(90deg);
+          background-color: grey;
+        }
+        .cube::after {
+          content: '';
+          position: absolute;
+          transform-origin: 100% 0;
+          transform: rotateY(270deg);
+          background-color: blue;
+        }
+      </pre>
+    </section>
+  </body>
+</html>
